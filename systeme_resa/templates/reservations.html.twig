@@ -1,0 +1,14 @@
+{# templates/user/reservations.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mes Réservations</h1>
+    <ul>
+        {% for reservation in reservations %}
+            <li>
+                {{ reservation.date|date('Y-m-d H:i') }} - {{ reservation.timeSlot }} : {{ reservation.eventName }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
